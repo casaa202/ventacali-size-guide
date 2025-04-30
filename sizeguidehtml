@@ -1,0 +1,221 @@
+<style>
+  .size-guide {
+    font-family: sans-serif;
+    color: #000;
+    max-width: 1000px;
+    margin: auto;
+  }
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    margin-top: 20px;
+  }
+  .tabs button {
+    background: none;
+    border: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #999;
+  }
+  .tabs button.active {
+    color: #000;
+    border-bottom: 2px solid #000;
+  }
+  .unit-switch {
+    margin: 20px 0;
+  }
+  .unit-switch button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-weight: bold;
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+  }
+  .unit-switch button.active {
+    background-color: #000;
+    color: #fff;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  .tab-section {
+    display: none;
+  }
+  .tab-section.active {
+    display: block;
+  }
+  .guide-layout {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .guide-table {
+    flex: 1 1 500px;
+  }
+  .guide-image {
+    flex: 1 1 300px;
+    font-size: 14px;
+  }
+  .guide-image img {
+    width: 120px;
+    margin-bottom: 10px;
+  }
+  .note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .guide-layout {
+      flex-direction: column;
+    }
+    .tabs {
+      justify-content: center;
+    }
+    .unit-switch {
+      text-align: center;
+    }
+    .guide-image {
+      text-align: center;
+    }
+  }
+</style>
+
+<div class="size-guide">
+  <h2 style="font-size: 24px; font-weight: 600;">Guía de Tallas</h2>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="chart">Tabla de Tallas</button>
+    <button class="tab-btn" data-tab="measurements">Medidas Corporales</button>
+  </div>
+
+  <!-- Unit Toggle -->
+  <div class="unit-switch">
+    <button class="unit-btn active" data-unit="cm">CM</button>
+    <button class="unit-btn" data-unit="in">IN</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div class="guide-layout">
+    <div class="guide-table">
+
+      <!-- Size Chart Tables -->
+      <div id="chart-cm" class="tab-section active">
+        <table>
+          <thead><tr><th>Talla</th><th>US</th><th>Busto</th><th>Cintura</th><th>Cadera</th><th>Largo</th></tr></thead>
+          <tbody>
+            <tr><td>XS</td><td>0</td><td>84</td><td>66</td><td>92</td><td>84</td></tr>
+            <tr><td>S</td><td>2–4</td><td>88</td><td>70</td><td>96</td><td>85</td></tr>
+            <tr><td>M</td><td>6–8</td><td>94</td><td>76</td><td>102</td><td>86.5</td></tr>
+            <tr><td>L</td><td>10–12</td><td>100</td><td>82</td><td>108</td><td>88</td></tr>
+            <tr><td>XL</td><td>14–16</td><td>108</td><td>90</td><td>116</td><td>89.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="chart-in" class="tab-section">
+        <table>
+          <thead><tr><th>Talla</th><th>US</th><th>Busto</th><th>Cintura</th><th>Cadera</th><th>Largo</th></tr></thead>
+          <tbody>
+            <tr><td>XS</td><td>0</td><td>33.1</td><td>26.0</td><td>36.2</td><td>33.1</td></tr>
+            <tr><td>S</td><td>2–4</td><td>34.6</td><td>27.6</td><td>37.8</td><td>33.5</td></tr>
+            <tr><td>M</td><td>6–8</td><td>37.0</td><td>29.9</td><td>40.2</td><td>34.1</td></tr>
+            <tr><td>L</td><td>10–12</td><td>39.4</td><td>32.3</td><td>42.5</td><td>34.6</td></tr>
+            <tr><td>XL</td><td>14–16</td><td>42.5</td><td>35.4</td><td>45.7</td><td>35.2</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Body Measurement Tables -->
+      <div id="measurements-cm" class="tab-section">
+        <table>
+          <thead><tr><th>Talla</th><th>US</th><th>EU</th><th>Busto</th><th>Cintura</th><th>Cadera</th></tr></thead>
+          <tbody>
+            <tr><td>XXS</td><td>00</td><td>30</td><td>78–80</td><td>60–62</td><td>86–88</td></tr>
+            <tr><td>XS</td><td>0</td><td>32</td><td>81–83</td><td>63–65</td><td>89–91</td></tr>
+            <tr><td>S</td><td>2–4</td><td>34–36</td><td>84–89</td><td>66–71</td><td>92–97</td></tr>
+            <tr><td>M</td><td>6–8</td><td>38–40</td><td>90–95</td><td>72–77</td><td>98–103</td></tr>
+            <tr><td>L</td><td>10–12</td><td>42–44</td><td>96–101</td><td>78–83</td><td>104–109</td></tr>
+            <tr><td>XL</td><td>14–16</td><td>46–48</td><td>102–108</td><td>84–92</td><td>110–118</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="measurements-in" class="tab-section">
+        <table>
+          <thead><tr><th>Talla</th><th>US</th><th>EU</th><th>Busto</th><th>Cintura</th><th>Cadera</th></tr></thead>
+          <tbody>
+            <tr><td>XXS</td><td>00</td><td>30</td><td>30.7–31.5</td><td>23.6–24.4</td><td>33.9–34.6</td></tr>
+            <tr><td>XS</td><td>0</td><td>32</td><td>31.9–32.7</td><td>24.8–25.6</td><td>35.0–35.8</td></tr>
+            <tr><td>S</td><td>2–4</td><td>34–36</td><td>33.1–35.0</td><td>26.0–28.0</td><td>36.2–38.2</td></tr>
+            <tr><td>M</td><td>6–8</td><td>38–40</td><td>35.4–37.4</td><td>28.3–30.3</td><td>38.6–40.6</td></tr>
+            <tr><td>L</td><td>10–12</td><td>42–44</td><td>37.8–39.8</td><td>30.7–32.7</td><td>40.9–42.9</td></tr>
+            <tr><td>XL</td><td>14–16</td><td>46–48</td><td>40.2–42.3</td><td>33.1–35.2</td><td>43.3–45.6</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Measurement Guide -->
+    <div class="guide-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png" alt="Guía de medidas">
+      <p><strong>Busto:</strong> mide por debajo de las axilas.</p>
+      <p><strong>Cintura:</strong> mide en la parte más estrecha de la cintura.</p>
+      <p><strong>Cadera:</strong> mide en la parte más ancha de las caderas.</p>
+      <p class="note">
+        * Si estás entre dos tallas, elige la más grande.<br>
+        * ¿Dudas? Contáctanos: <strong>info@ventacali.com</strong>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const unitBtns = document.querySelectorAll('.unit-btn');
+  const tabSections = document.querySelectorAll('.tab-section');
+
+  let currentTab = 'chart';
+  let currentUnit = 'cm';
+
+  function updateTabs() {
+    tabSections.forEach(section => {
+      section.classList.remove('active');
+      if (section.id === `${currentTab}-${currentUnit}`) {
+        section.classList.add('active');
+      }
+    });
+  }
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentTab = btn.dataset.tab;
+      updateTabs();
+    });
+  });
+
+  unitBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      unitBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentUnit = btn.dataset.unit;
+      updateTabs();
+    });
+  });
+
+  updateTabs();
+</script>
